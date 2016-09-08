@@ -30,8 +30,18 @@ router.get('/contact',function(req,res){
   res.sendFile(path + "contact.html");
 });
 
+router.get('/contact2',function(req,res){
+  res.sendFile(path + "contact2.html");
+});
+
+router.post('/contact2', function(req, res){
+  console.log(req.body);
+  res.redirect('/contact2'); // redirect to same page after request fulfilled
+});
+
 router.post('/contact', function(req, res){
-  console.log(req.body, res.body);
+  console.log(req.body);
+  res.redirect('/contact'); // redirect to same page after request fulfilled
 });
 
 // use the above defined routes
